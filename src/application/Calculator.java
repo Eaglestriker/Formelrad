@@ -48,14 +48,19 @@ public class Calculator {
 		 * welche Methode unten aufgerufen werden muss.
 		 */
 		
-		if(leistung != 0 && spannung !=0) {
+		if(spannung != 0 && strom !=0) {
 			System.out.println("test");
-			strom = pAusUundI(leistung, spannung);
+			leistung = pAusUundI(spannung, strom);
 		}
 		
-		else if(leistung != 0 && wiederstand != 0) {
+		else if(spannung != 0 && wiederstand != 0) {
 			
-			strom = pAusUx2durchR(leistung, wiederstand);
+			leistung = pAusUx2durchR(spannung, wiederstand);
+		}
+		
+		else if(wiederstand != 0 && strom != 0) {
+			
+			leistung = pAusRundIx2(wiederstand, strom);
 		}
 		
 	}
@@ -63,12 +68,17 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzuf�gen
 	 */
 	
-	public double pAusUundI(double leistung, double spannung) {
-		return leistung*spannung;
+	public double pAusUundI(double spannung, double strom) {
+		return spannung*strom;
 		}
 	
-	public double pAusUx2durchR(double leistung, double wiederstand) {
-		return (leistung * leistung)/wiederstand;
+	public double pAusUx2durchR(double spannung, double wiederstand) {
+		return (spannung * spannung)/wiederstand;
+	}
+	
+	public double pAusRundIx2(double wiederstand, double strom) {
+		
+		return wiederstand * (strom * strom);
 	}
 	
 }
