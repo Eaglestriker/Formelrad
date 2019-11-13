@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 /**
@@ -20,6 +21,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			primaryStage.setHeight(550);
 			Pane root = new Pane();
 
 			// Creating an image
@@ -77,22 +79,41 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
+			
+			
 			btnBerechnen.setOnAction(e -> {
 				double power = 0.0;
 				double tension = 0.0;
 				double current = 0.0;
 				double resistence = 0.0;
+				
+				int zaehler = 0;
+				String warning = "Sie haben mehr als zwei Zahlen eingegeben, \n dies wird falsche Resultate hervorbringen!";
+				
 				if(!txLeistung.getText().isEmpty()) {
 					power = Double.parseDouble(txLeistung.getText());
+					zaehler = zaehler +1;
 				}
 				if(!txSpannung.getText().isEmpty()) {
 					tension = Double.parseDouble(txSpannung.getText());
+					zaehler = zaehler +1;
 				}
 				if(!txStrom.getText().isEmpty()) {
 					current = Double.parseDouble(txStrom.getText());
+					zaehler = zaehler +1;
 				}
 				if(!txWiderstand.getText().isEmpty()) {
 					resistence = Double.parseDouble(txWiderstand.getText());
+					zaehler = zaehler +1;
+				}
+				
+				if(zaehler >= 3) {
+					Label lbwarning = new Label(warning);
+					lbwarning.relocate(25, 480);
+					lbwarning.setFont(Font.font(15));
+					lbwarning.setTextFill(Color.web("red"));
+					root.getChildren().add(lbwarning);
+					
 				}
 				Calculator myCalculator = new Calculator(
 						power, tension, current, resistence);
