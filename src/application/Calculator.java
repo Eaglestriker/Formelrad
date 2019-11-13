@@ -10,14 +10,14 @@ public class Calculator {
 	private double leistung;
 	private double spannung;
 	private double strom;
-	private double wiederstand;
+	private double widerstand;
 
-	public Calculator(double leistung, double spannung, double strom, double wiederstand) {
+	public Calculator(double leistung, double spannung, double strom, double widerstand) {
 		super();
 		this.leistung = leistung;
 		this.spannung = spannung;
 		this.strom = strom;
-		this.wiederstand = wiederstand;
+		this.widerstand = widerstand;
 	}
 
 	public double getLeistung() {
@@ -32,14 +32,14 @@ public class Calculator {
 		return strom;
 	}
 
-	public double getWiederstand() {
-		return wiederstand;
+	public double getWiderstand() {
+		return widerstand;
 	}
 
 	@Override
 	public String toString() {
 		return "Calculator [leistung=" + leistung + ", spannung=" + spannung + ", strom=" + strom + ", widerstand="
-				+ wiederstand + "]";
+				+ widerstand + "]";
 	}
 
 	public void calculate() {
@@ -53,21 +53,26 @@ public class Calculator {
 			leistung = pAusUundI(spannung, strom);
 		}
 
-		else if(spannung != 0 && wiederstand != 0) {
+		else if(spannung != 0 && widerstand != 0) {
 
-			leistung = pAusUx2durchR(spannung, wiederstand);
+			leistung = pAusUx2durchR(spannung, widerstand);
 
 		}
 
-		else if(wiederstand != 0 && strom != 0) {
+		else if(widerstand != 0 && strom != 0) {
 
-			leistung = pAusRundIx2(wiederstand, strom);
-			spannung = uAusRundI(wiederstand, strom);
+			leistung = pAusRundIx2(widerstand, strom);
+			spannung = uAusRundI(widerstand, strom);
 		}
 		
 		else if(leistung != 0 && strom != 0) {
 			
 			spannung = uAusPundI(leistung, strom);
+		}
+		
+		else if(leistung != 0 && widerstand != 0) {
+			
+			spannung = uAusPundRwurzel(leistung, widerstand);
 		}
 
 	}
@@ -80,23 +85,36 @@ public class Calculator {
 		return spannung * strom;
 	}
 
-	public double pAusUx2durchR(double spannung, double wiederstand) {
-		return (spannung * spannung) / wiederstand;
+	public double pAusUx2durchR(double spannung, double widerstand) {
+		return (spannung * spannung) / widerstand;
 	}
 
-	public double pAusRundIx2(double wiederstand, double strom) {
+	public double pAusRundIx2(double widerstand, double strom) {
 
-		return wiederstand * (strom * strom);
+		return widerstand * (strom * strom);
 	}
 
-	public double uAusRundI(double wiederstand, double strom) {
+	public double uAusRundI(double widerstand, double strom) {
 
-		return wiederstand * strom;
+		return widerstand * strom;
 	}
 	
 	public double uAusPundI(double leistung, double strom) {
 		
 		return leistung / strom;
 	}
+	
+public double uAusPundR(double leistung, double strom) {
+		
+		return leistung / strom;
+	}
+
+public double uAusPundRwurzel(double leistung, double widerstand) {
+	
+	double ergebnis = Math.sqrt(leistung * widerstand);
+	return ergebnis;
+}
+	
+	
 	
 }
