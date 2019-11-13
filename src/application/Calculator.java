@@ -3,8 +3,8 @@ package application;
 /**
  * Berechnet das Formelrad
  * 
- * @author Peter Rutschmann
- * @version 13.09.2018
+ * @author Tim Dubath und Yannick Ruck
+ * @version 13.11.2019
  */
 public class Calculator {
 	private double leistung;
@@ -48,21 +48,26 @@ public class Calculator {
 		 * aufgerufen werden muss.
 		 */
 
-		if (spannung != 0 && strom != 0) {
+		if(spannung != 0 && strom != 0) {
 			System.out.println("test");
 			leistung = pAusUundI(spannung, strom);
 		}
 
-		else if (spannung != 0 && wiederstand != 0) {
+		else if(spannung != 0 && wiederstand != 0) {
 
 			leistung = pAusUx2durchR(spannung, wiederstand);
 
 		}
 
-		else if (wiederstand != 0 && strom != 0) {
+		else if(wiederstand != 0 && strom != 0) {
 
 			leistung = pAusRundIx2(wiederstand, strom);
 			spannung = uAusRundI(wiederstand, strom);
+		}
+		
+		else if(leistung != 0 && strom != 0) {
+			
+			spannung = uAusPundI(leistung, strom);
 		}
 
 	}
@@ -88,5 +93,10 @@ public class Calculator {
 
 		return wiederstand * strom;
 	}
-
+	
+	public double uAusPundI(double leistung, double strom) {
+		
+		return leistung / strom;
+	}
+	
 }
