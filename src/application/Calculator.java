@@ -81,7 +81,7 @@ public class Calculator {
 		else if(spannung != 0 && leistung != 0) {
 			
 			widerstand = rAusUundP(spannung, leistung);
-			
+			strom = iAusPundU(spannung, leistung);
 		}
 
 	}
@@ -142,6 +142,11 @@ public class Calculator {
 	public double iAusUundR(double spannung, double widerstand) {
 		
 		return spannung / widerstand;
+	}
+	
+	public double iAusPundU(double spannung, double leistung) {
+		
+		return leistung / spannung;
 	}
 	
 	
