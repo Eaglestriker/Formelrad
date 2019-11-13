@@ -51,6 +51,7 @@ public class Calculator {
 		if(spannung != 0 && strom != 0) {
 			System.out.println("test");
 			leistung = pAusUundI(spannung, strom);
+			widerstand = rAusUundI(spannung, strom);
 		}
 
 		else if(spannung != 0 && widerstand != 0) {
@@ -68,11 +69,17 @@ public class Calculator {
 		else if(leistung != 0 && strom != 0) {
 			
 			spannung = uAusPundI(leistung, strom);
+			widerstand = rAusPundI(leistung, strom);
 		}
 		
 		else if(leistung != 0 && widerstand != 0) {
 			
 			spannung = uAusPundRwurzel(leistung, widerstand);
+		}
+		
+		else if(spannung != 0 && leistung != 0) {
+			
+			widerstand = rAusUundP(spannung, leistung);
 		}
 
 	}
@@ -104,16 +111,31 @@ public class Calculator {
 		return leistung / strom;
 	}
 	
-public double uAusPundR(double leistung, double strom) {
+	public double uAusPundR(double leistung, double strom) {
 		
 		return leistung / strom;
 	}
 
-public double uAusPundRwurzel(double leistung, double widerstand) {
+	public double uAusPundRwurzel(double leistung, double widerstand) {
 	
 	double ergebnis = Math.sqrt(leistung * widerstand);
 	return ergebnis;
-}
+	}
+	
+	public double rAusUundI(double spannung, double widerstand) {
+		
+		return spannung / widerstand;
+	}
+	
+	public double rAusPundI(double leistung, double strom) {
+		
+		return leistung / (strom * strom);
+	}
+	
+	public double rAusUundP(double spannung, double leistung) {
+		
+		return (spannung * spannung) / leistung;
+	}
 	
 	
 	
