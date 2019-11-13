@@ -50,7 +50,7 @@ public class Calculator {
 		 */
 
 		if(spannung != 0 && strom != 0) {
-			System.out.println("test");
+			
 			leistung = pAusUundI(spannung, strom);
 			widerstand = rAusUundI(spannung, strom);
 		}
