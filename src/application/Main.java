@@ -102,7 +102,7 @@ public class Main extends Application {
 				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
 				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 				txStrom.setText(Double.toString(myCalculator.getStrom()));
-				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				txWiderstand.setText(Double.toString(myCalculator.getWiederstand()));
 			});
 
 			Scene scene = new Scene(root, 330, 490);

@@ -9,14 +9,14 @@ public class Calculator {
 	private double leistung;
 	private double spannung;
 	private double strom;
-	private double widerstand;
+	private double wiederstand;
 	
-	public Calculator(double leistung, double spannung, double strom, double widerstand) {
+	public Calculator(double leistung, double spannung, double strom, double wiederstand) {
 		super();
 		this.leistung = leistung;
 		this.spannung = spannung;
 		this.strom = strom;
-		this.widerstand = widerstand;
+		this.wiederstand = wiederstand;
 	}
 	
 	public double getLeistung() {
@@ -31,8 +31,8 @@ public class Calculator {
 		return strom;
 	}
 
-	public double getWiderstand() {
-		return widerstand;
+	public double getWiederstand() {
+		return wiederstand;
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class Calculator {
 		return "Calculator [leistung=" + leistung + 
 				", spannung=" + spannung + 
 				", strom=" + strom + 
-				", widerstand="	+ widerstand + "]";
+				", widerstand="	+ wiederstand + "]";
 	}
 
 	public void calculate() {
@@ -53,6 +53,11 @@ public class Calculator {
 			strom = pAusUundI(leistung, spannung);
 		}
 		
+		else if(leistung != 0 && wiederstand != 0) {
+			
+			strom = pAusUx2durchR(leistung, wiederstand);
+		}
+		
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzuf�gen
@@ -61,5 +66,9 @@ public class Calculator {
 	public double pAusUundI(double leistung, double spannung) {
 		return leistung*spannung;
 		}
+	
+	public double pAusUx2durchR(double leistung, double wiederstand) {
+		return (leistung * leistung)/wiederstand;
+	}
 	
 }
