@@ -76,6 +76,7 @@ public class Calculator {
 		else if(leistung != 0 && widerstand != 0) {
 			
 			spannung = uAusPundRwurzel(leistung, widerstand);
+			strom = iAusPundR(leistung, widerstand);
 		}
 		
 		else if(spannung != 0 && leistung != 0) {
@@ -147,6 +148,11 @@ public class Calculator {
 	public double iAusPundU(double spannung, double leistung) {
 		
 		return leistung / spannung;
+	}
+	
+	public double iAusPundR(double leistung, double widerstand) {
+		
+		return Math.sqrt(leistung / widerstand);
 	}
 	
 	
