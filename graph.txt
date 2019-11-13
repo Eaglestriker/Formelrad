@@ -1,0 +1,72 @@
+* commit b561895cf9a5aeb10d87b0da2a37f8d79df89362 (HEAD -> develop, origin/develop, origin/CalculateR, CalculateR)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 11:37:08 2019 +0100
+| 
+|     Dritte Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus U und P)
+| 
+* commit 705e46b2268fc27bc4a4159469c99c25c12d0ab0
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 11:31:09 2019 +0100
+| 
+|     Zweite Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus P und I)
+| 
+* commit 488f8ff56b99fdbb35681c8af5388962b6537604
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 11:25:40 2019 +0100
+| 
+|     Erste Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus U und I)
+| 
+* commit 12bddf8a7f78b7682f27a2008cf528793f24086e (origin/CalculateU, CalculateU)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 11:14:50 2019 +0100
+| 
+|     Schreibfehler korrigiert und Berechnung von U aus P und R fertiggestellt
+| 
+* commit 6224609e170d53db0abd18d89fa4e53f965c16a7
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 11:03:32 2019 +0100
+| 
+|     Kopfzeile angepasst und Berechnung von U aus P und I fertiggestellt
+| 
+* commit 974c0c357de75fb4c1f323c612024669e8957561
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 10:53:18 2019 +0100
+| 
+|     Berechnung von U aus Wiederstand und Strom
+| 
+* commit 01aefdd793fd42478f24ee9efd76ecbfce4f5b3e (origin/CalculateP, CalculateP)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 10:36:26 2019 +0100
+| 
+|     Berechnung von P aus Wiederstand und Strom. Zusätzlich alle falschen Formeln korrigiert.
+| 
+* commit fe01ef8693d571418b4e5443f46b24a765aa3c00
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 10:05:37 2019 +0100
+| 
+|     Berechnung von P aus Wiederstand und Leistung
+| 
+* commit 4031cb63e9df95abdd767b6150c8766179d19e3e
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 10:01:10 2019 +0100
+| 
+|     Erste Berechnung für P
+|   
+*   commit 25736a3c5171e0a800950cbdd03cfa385efeed62
+|\  Merge: 14d63ad eb35f47
+| | Author: Highom <highomlp@gmail.com>
+| | Date:   Fri Nov 8 15:13:12 2019 +0100
+| | 
+| |     merged IntegrateBaseProject into Develop
+| | 
+| * commit eb35f4760c72488f2cc407ea5993b31f53654e50 (origin/IntegrateBaseProject)
+|/  Author: Highom <highomlp@gmail.com>
+|   Date:   Fri Nov 8 14:59:38 2019 +0100
+|   
+|       Added Base Project
+| 
+* commit 14d63ad32220bcdc4210ddb47d5ab260ae7be749 (origin/master, origin/HEAD, watt_branch, master)
+  Author: Eaglestriker <55586001+Eaglestriker@users.noreply.github.com>
+  Date:   Fri Nov 1 14:56:13 2019 +0100
+  
+      Initial commit
