@@ -1,5 +1,6 @@
 package application;
 
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -14,18 +15,37 @@ import javafx.scene.text.Font;
 
 /**
  * Formelrad Application
+ * 
  * @author Tim Dubath und Yannick Ruck
  * @version 13.11.2019
  */
 public class Main extends Application {
+	
+	Label lbwarning = new Label();
+	Pane root = new Pane();
+	
+	
+	public void exceptionHandling(String message) {
+		lbwarning.setText("");
+		lbwarning.setText(message);
+		lbwarning.relocate(25, 480);
+		lbwarning.setFont(Font.font(15));
+		lbwarning.setTextFill(Color.web("red"));
+	}
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			lbwarning.setText("");
+			root.getChildren().add(lbwarning);	
 			primaryStage.setHeight(550);
-			Pane root = new Pane();
-
+			
+			String warning = "Sie haben mehr als zwei Zahlen eingegeben, \n dies wird falsche Resultate hervorbringen!";
+			String warning2 = "Bitte Zahlen und keine Buchstaben eingeben.";
+			
+			
 			// Creating an image
-			Image image = new Image(getClass().getResourceAsStream("formelradelektronik.gif"));	
+			Image image = new Image(getClass().getResourceAsStream("formelradelektronik.gif"));
 			ImageView imageView = new ImageView(image);
 			imageView.setX(10);
 			imageView.setY(10);
@@ -79,62 +99,61 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
-			
-			
 			btnBerechnen.setOnAction(e -> {
 				double power = 0.0;
 				double tension = 0.0;
 				double current = 0.0;
 				double resistence = 0.0;
-				
+
 				int zaehler = 0;
-				String warning = "Sie haben mehr als zwei Zahlen eingegeben, \n dies wird falsche Resultate hervorbringen!";
-				
-				if(!txLeistung.getText().isEmpty()) {
-					power = Double.parseDouble(txLeistung.getText());
-					zaehler = zaehler +1;
+
+				try {
+					if (!txLeistung.getText().isEmpty()) {
+						power = Double.parseDouble(txLeistung.getText());
+						zaehler = zaehler + 1;
+					} else {
+						txLeistung.setStyle("-fx-text-inner-color: red;");
+					}
+
+					if (!txSpannung.getText().isEmpty()) {
+						tension = Double.parseDouble(txSpannung.getText());
+						zaehler = zaehler + 1;
+					} else {
+						txSpannung.setStyle("-fx-text-inner-color: red;");
+					}
+
+					if (!txStrom.getText().isEmpty()) {
+						current = Double.parseDouble(txStrom.getText());
+						zaehler = zaehler + 1;
+					} else {
+						txStrom.setStyle("-fx-text-inner-color: red;");
+					}
+
+					if (!txWiderstand.getText().isEmpty()) {
+						resistence = Double.parseDouble(txWiderstand.getText());
+						zaehler = zaehler + 1;
+					} else {
+						txWiderstand.setStyle("-fx-text-inner-color: red;");
+					}
+
+					if (zaehler >= 3) {
+						exceptionHandling(warning);
+					}
+				} catch (Exception z) {
+					exceptionHandling(warning2);
+
+					power = (Double) null;
+					tension = (Double) null;
+					current = (Double) null;
+					resistence = (Double) null;
+
+					z.printStackTrace();
 				}
-				else {
-					txLeistung.setStyle("-fx-text-inner-color: red;");
-				}
-				
-				if(!txSpannung.getText().isEmpty()) {
-					tension = Double.parseDouble(txSpannung.getText());
-					zaehler = zaehler +1;
-				}
-				else {
-					txSpannung.setStyle("-fx-text-inner-color: red;");
-				}
-				
-				if(!txStrom.getText().isEmpty()) {
-					current = Double.parseDouble(txStrom.getText());
-					zaehler = zaehler +1;
-				}
-				else {
-					txStrom.setStyle("-fx-text-inner-color: red;");
-				}
-				
-				if(!txWiderstand.getText().isEmpty()) {
-					resistence = Double.parseDouble(txWiderstand.getText());
-					zaehler = zaehler +1;
-				}
-				else {
-					txWiderstand.setStyle("-fx-text-inner-color: red;");
-				}
-				
-				if(zaehler >= 3) {
-					Label lbwarning = new Label(warning);
-					lbwarning.relocate(25, 480);
-					lbwarning.setFont(Font.font(15));
-					lbwarning.setTextFill(Color.web("red"));
-					root.getChildren().add(lbwarning);
-					
-				}
-				Calculator myCalculator = new Calculator(
-						power, tension, current, resistence);
-				
+
+				Calculator myCalculator = new Calculator(power, tension, current, resistence);
+
 				myCalculator.calculate();
-					
+
 				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
 				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 				txStrom.setText(Double.toString(myCalculator.getStrom()));
