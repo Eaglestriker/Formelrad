@@ -1,63 +1,162 @@
-* commit b561895cf9a5aeb10d87b0da2a37f8d79df89362 (HEAD -> develop, origin/develop, origin/CalculateR, CalculateR)
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 11:37:08 2019 +0100
-| 
-|     Dritte Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus U und P)
-| 
-* commit 705e46b2268fc27bc4a4159469c99c25c12d0ab0
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 11:31:09 2019 +0100
-| 
-|     Zweite Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus P und I)
-| 
-* commit 488f8ff56b99fdbb35681c8af5388962b6537604
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 11:25:40 2019 +0100
-| 
-|     Erste Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus U und I)
-| 
-* commit 12bddf8a7f78b7682f27a2008cf528793f24086e (origin/CalculateU, CalculateU)
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 11:14:50 2019 +0100
-| 
-|     Schreibfehler korrigiert und Berechnung von U aus P und R fertiggestellt
-| 
-* commit 6224609e170d53db0abd18d89fa4e53f965c16a7
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 11:03:32 2019 +0100
-| 
-|     Kopfzeile angepasst und Berechnung von U aus P und I fertiggestellt
-| 
-* commit 974c0c357de75fb4c1f323c612024669e8957561
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 10:53:18 2019 +0100
-| 
-|     Berechnung von U aus Wiederstand und Strom
-| 
-* commit 01aefdd793fd42478f24ee9efd76ecbfce4f5b3e (origin/CalculateP, CalculateP)
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 10:36:26 2019 +0100
-| 
-|     Berechnung von P aus Wiederstand und Strom. Zusätzlich alle falschen Formeln korrigiert.
-| 
-* commit fe01ef8693d571418b4e5443f46b24a765aa3c00
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 10:05:37 2019 +0100
-| 
-|     Berechnung von P aus Wiederstand und Leistung
-| 
-* commit 4031cb63e9df95abdd767b6150c8766179d19e3e
-| Author: Eaglestriker <dubath.tim@gmail.com>
-| Date:   Wed Nov 13 10:01:10 2019 +0100
-| 
-|     Erste Berechnung für P
-|   
-*   commit 25736a3c5171e0a800950cbdd03cfa385efeed62
-|\  Merge: 14d63ad eb35f47
-| | Author: Highom <highomlp@gmail.com>
-| | Date:   Fri Nov 8 15:13:12 2019 +0100
+*   commit 8f67e998e6336b35ae10d642e4a675242cbcef2f (tag: v2.2, origin/master, origin/HEAD, master)
+|\  Merge: 3b8d201 874da51
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Thu Nov 14 10:16:53 2019 +0100
 | | 
-| |     merged IntegrateBaseProject into Develop
+| |     Fehler Handling
+| | 
+| * commit 874da517393b8b00da16b44e057850e363f68bf8 (HEAD -> develop, origin/develop, origin/NumberFormatException, NumberFormatException)
+|/  Author: Eaglestriker <dubath.tim@gmail.com>
+|   Date:   Thu Nov 14 10:14:01 2019 +0100
+|   
+|       Für bessere Benutzerfreundlichkeit mit Exception Handling
+| 
+* commit 3b8d2012d2fa4b7bd9d55919eb8f9cbc30b66f7a (tag: v2.1, origin/verbesserung, verbesserung)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 17:43:52 2019 +0100
+| 
+|     Einen Sysout entfernt
+| 
+* commit f7638b3822ac14f44fb5b951ec17ef76c84a682b (tag: v2.0)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 17:34:19 2019 +0100
+| 
+|     Namen angepasst in der Main
+| 
+* commit 5c2d5ee7d4a237e84bb1085351fc966cb55ddf92 (origin/consoleLoggin, consoleLoggin)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 17:31:13 2019 +0100
+| 
+|     Jegliche Berechnung wird in der Konsole aufgeführt und erklärt.
+| 
+* commit 893d1e14b2b7d66c248941111ac157d974f911c3 (origin/redWriting, redWriting)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 16:44:00 2019 +0100
+| 
+|     Ausgaben werden Rot erscheinen
+| 
+* commit ff955836a54a7273193d9521b4bdcfb307f12df4 (origin/WarningRed, WarningRed)
+| Author: Eaglestriker <dubath.tim@gmail.com>
+| Date:   Wed Nov 13 16:30:10 2019 +0100
+| 
+|     Warnung wegen zu vielen Eingaben
+|   
+*   commit 5d9a583f0caf93ae3b3b1c090ffcbcb19bc7eed1 (tag: v1.0)
+|\  Merge: 49f9f1b 5c5b32f
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 15:44:05 2019 +0100
+| | 
+| |     merge conflict with .gitignore, trsy to commit without changes
+| | 
+| * commit 5c5b32f2e1fbfcb4a16258c43f0d70ed1bf10f7e
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 14:28:16 2019 +0100
+| | 
+| |     Implementierung von den Strom berechnungen
+| |   
+| *   commit 30b592c9a06ec0a7feee3d0bbf63baa919933c4c
+| |\  Merge: 6993f24 b561895
+| | | Author: Yannick Ruck <yannick@supertext.ch>
+| | | Date:   Wed Nov 13 11:50:56 2019 +0100
+| | | 
+| | |     Merge branch 'develop' of https://github.com/Eaglestriker/Formelrad into develop
+| | | 
+| * | commit 6993f246830c1f6ecf982a3fd83bbf74d3b1dca7
+| | | Author: Yannick Ruck <yannick@supertext.ch>
+| | | Date:   Wed Nov 13 11:32:28 2019 +0100
+| | | 
+| | |     IntelliJ Folder ignorieren
+| | | 
+* | | commit 49f9f1b1b161e54bb29680784d03fef1ae50bb8e
+| | | Author: Eaglestriker <55586001+Eaglestriker@users.noreply.github.com>
+| | | Date:   Wed Nov 13 14:54:20 2019 +0100
+| | | 
+| | |     Delete README.md
+| | | 
+* | | commit c2b35122180d8de963c701a466c716e9fb974fe2
+| | | Author: Eaglestriker <55586001+Eaglestriker@users.noreply.github.com>
+| | | Date:   Wed Nov 13 14:53:57 2019 +0100
+| | | 
+| | |     Delete .gitignore
+| | |   
+| | | * commit 2442f1c8b7691e8014ff932de98f8028e15c975e (origin/CalculateI)
+| | | | Author: Eaglestriker <dubath.tim@gmail.com>
+| | | | Date:   Wed Nov 13 14:13:05 2019 +0100
+| | | | 
+| | | |     3. Berechnung von I aus R und P erfolgreich beendet
+| | | | 
+| | | * commit 5e13e8cfc1f731e5f8adeb356c2c528544964ad6
+| | | | Author: Eaglestriker <dubath.tim@gmail.com>
+| | | | Date:   Wed Nov 13 14:07:48 2019 +0100
+| | | | 
+| | | |     2. Berechnung von I aus U und P erfolgreich beendet
+| | | | 
+| | | * commit dbebc11332016cefdfe190237f4ee7cb1869ebca
+| | |/  Author: Eaglestriker <dubath.tim@gmail.com>
+| | |   Date:   Wed Nov 13 13:34:43 2019 +0100
+| | |   
+| | |       Erste Formel zur Berechnung von Stromstärke erfolgreich programmiert (I aus U und P)
+| | | 
+| | * commit b561895cf9a5aeb10d87b0da2a37f8d79df89362 (origin/CalculateR)
+| | | Author: Eaglestriker <dubath.tim@gmail.com>
+| | | Date:   Wed Nov 13 11:37:08 2019 +0100
+| | | 
+| | |     Dritte Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus U und P)
+| | | 
+| | * commit 705e46b2268fc27bc4a4159469c99c25c12d0ab0
+| | | Author: Eaglestriker <dubath.tim@gmail.com>
+| | | Date:   Wed Nov 13 11:31:09 2019 +0100
+| | | 
+| | |     Zweite Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus P und I)
+| | | 
+| | * commit 488f8ff56b99fdbb35681c8af5388962b6537604
+| |/  Author: Eaglestriker <dubath.tim@gmail.com>
+| |   Date:   Wed Nov 13 11:25:40 2019 +0100
+| |   
+| |       Erste Formel zur Berechnung von Widerstand erfolgreich programmiert (R aus U und I)
+| | 
+| * commit 12bddf8a7f78b7682f27a2008cf528793f24086e (origin/CalculateU)
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 11:14:50 2019 +0100
+| | 
+| |     Schreibfehler korrigiert und Berechnung von U aus P und R fertiggestellt
+| | 
+| * commit 6224609e170d53db0abd18d89fa4e53f965c16a7
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 11:03:32 2019 +0100
+| | 
+| |     Kopfzeile angepasst und Berechnung von U aus P und I fertiggestellt
+| | 
+| * commit 974c0c357de75fb4c1f323c612024669e8957561
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 10:53:18 2019 +0100
+| | 
+| |     Berechnung von U aus Wiederstand und Strom
+| | 
+| * commit 01aefdd793fd42478f24ee9efd76ecbfce4f5b3e (origin/CalculateP)
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 10:36:26 2019 +0100
+| | 
+| |     Berechnung von P aus Wiederstand und Strom. Zusätzlich alle falschen Formeln korrigiert.
+| | 
+| * commit fe01ef8693d571418b4e5443f46b24a765aa3c00
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 10:05:37 2019 +0100
+| | 
+| |     Berechnung von P aus Wiederstand und Leistung
+| | 
+| * commit 4031cb63e9df95abdd767b6150c8766179d19e3e
+| | Author: Eaglestriker <dubath.tim@gmail.com>
+| | Date:   Wed Nov 13 10:01:10 2019 +0100
+| | 
+| |     Erste Berechnung für P
+| |   
+| *   commit 25736a3c5171e0a800950cbdd03cfa385efeed62
+| |\  Merge: 14d63ad eb35f47
+|/ /  Author: Highom <highomlp@gmail.com>
+| |   Date:   Fri Nov 8 15:13:12 2019 +0100
+| |   
+| |       merged IntegrateBaseProject into Develop
 | | 
 | * commit eb35f4760c72488f2cc407ea5993b31f53654e50 (origin/IntegrateBaseProject)
 |/  Author: Highom <highomlp@gmail.com>
@@ -65,7 +164,7 @@
 |   
 |       Added Base Project
 | 
-* commit 14d63ad32220bcdc4210ddb47d5ab260ae7be749 (origin/master, origin/HEAD, watt_branch, master)
+* commit 14d63ad32220bcdc4210ddb47d5ab260ae7be749
   Author: Eaglestriker <55586001+Eaglestriker@users.noreply.github.com>
   Date:   Fri Nov 1 14:56:13 2019 +0100
   
